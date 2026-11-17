@@ -1,0 +1,311 @@
+import { Customer } from '../types/customer';
+
+export const mockCustomers: Customer[] = [
+  {
+    id: '901',
+    name: 'Demo Customer',
+    email: 'demo1@gmail.com',
+    mobile: '9106446725',
+    country: 'India',
+    countryCode: '91',
+    avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
+    status: 'active',
+    emailVerified: false,
+    mobileVerified: false,
+    kycVerified: true,
+    registrationDate: '17 Nov 2026',
+    referralCode: 'REF-OGKIDE0F',
+    referredByCode: 'REF-WELCOME50',
+    walletBalance: 50.00,
+    loyaltyPoints: 120,
+    totalOrders: 8,
+    totalSpent: 4250.00,
+    addresses: [
+      {
+        id: 'addr-1',
+        type: 'home',
+        name: 'Demo Customer',
+        mobile: '9106446725',
+        addressLine1: 'Flat 402, Green Avenue Tower A',
+        addressLine2: 'Sector 62, Near City Center Metro',
+        landmark: 'Opposite Fortis Hospital',
+        city: 'Noida',
+        state: 'Uttar Pradesh',
+        postalCode: '201301',
+        latitude: 28.6280,
+        longitude: 77.3649,
+        isDefault: true,
+      },
+      {
+        id: 'addr-2',
+        type: 'work',
+        name: 'Demo Customer (Office)',
+        mobile: '9106446725',
+        addressLine1: 'Floor 6, Logix Cyber Park',
+        addressLine2: 'Tower B, C-28/29, Industrial Area',
+        landmark: 'Near Electronic City',
+        city: 'Noida',
+        state: 'Uttar Pradesh',
+        postalCode: '201309',
+        latitude: 28.6180,
+        longitude: 77.3750,
+        isDefault: false,
+      }
+    ],
+    orders: [
+      {
+        id: 'ord-11195',
+        orderNumber: '4847',
+        status: 'pending',
+        paymentStatus: 'pending',
+        paymentMethod: 'cod',
+        total: 350.00,
+        createdAt: '2026-11-16 09:47:49',
+        storeName: "Amit's Grocery Hub",
+        itemsCount: 1,
+      },
+      {
+        id: 'ord-11140',
+        orderNumber: '4812',
+        status: 'delivered',
+        paymentStatus: 'paid',
+        paymentMethod: 'wallet',
+        total: 1290.00,
+        createdAt: '2026-11-10 14:15:20',
+        storeName: "Fresh Supermarket Express",
+        itemsCount: 4,
+      },
+      {
+        id: 'ord-10980',
+        orderNumber: '4750',
+        status: 'delivered',
+        paymentStatus: 'paid',
+        paymentMethod: 'razorpay',
+        total: 820.00,
+        createdAt: '2026-11-02 18:30:11',
+        storeName: "Daily Pharmacy & Wellness",
+        itemsCount: 2,
+      },
+      {
+        id: 'ord-10512',
+        orderNumber: '4601',
+        status: 'cancelled',
+        paymentStatus: 'refunded',
+        paymentMethod: 'stripe',
+        total: 540.00,
+        createdAt: '2026-10-22 11:20:00',
+        storeName: "QuickBite Artisan Bakery",
+        itemsCount: 3,
+      }
+    ],
+    walletTransactions: [
+      {
+        id: 'tx-1918',
+        amount: 50.00,
+        type: 'deposit',
+        paymentMethod: 'system',
+        status: 'completed',
+        description: 'Welcome promotion credit',
+        reference: 'SYS-INIT-50',
+        createdAt: '2026-11-17 13:27:14'
+      },
+      {
+        id: 'tx-1840',
+        amount: 1290.00,
+        type: 'debit',
+        paymentMethod: 'wallet',
+        status: 'completed',
+        description: 'Payment for Order #4812',
+        reference: 'ORD-4812',
+        createdAt: '2026-11-10 14:15:20'
+      },
+      {
+        id: 'tx-1830',
+        amount: 1500.00,
+        type: 'deposit',
+        paymentMethod: 'razorpay',
+        status: 'completed',
+        description: 'Wallet top-up via UPI',
+        reference: 'PAY_NZx9821k',
+        createdAt: '2026-11-10 14:10:05'
+      },
+      {
+        id: 'tx-1702',
+        amount: 540.00,
+        type: 'refund',
+        paymentMethod: 'system',
+        status: 'completed',
+        description: 'Refund for cancelled Order #4601',
+        reference: 'REF-ORD-4601',
+        createdAt: '2026-10-22 12:00:30'
+      }
+    ],
+    loyaltyTransactions: [
+      {
+        id: 'lp-401',
+        points: 50,
+        type: 'credit',
+        status: 'active',
+        expiryDays: 90,
+        description: 'Order completion bonus for Order #4812',
+        createdAt: '2026-11-10 14:16:00'
+      },
+      {
+        id: 'lp-350',
+        points: 70,
+        type: 'credit',
+        status: 'active',
+        expiryDays: 90,
+        description: 'Friend referral first order bonus',
+        createdAt: '2026-11-05 10:00:00'
+      }
+    ],
+    notifications: [
+      {
+        id: 'notif-1',
+        title: 'Order Out for Delivery',
+        message: 'Your order #4812 has been picked up by rider Rajesh Kumar.',
+        type: 'order',
+        status: 'read',
+        createdAt: '2026-11-10 14:40:00'
+      },
+      {
+        id: 'notif-2',
+        title: 'Wallet Credited',
+        message: '₹50.00 welcome promotional credit added to your wallet.',
+        type: 'wallet',
+        status: 'read',
+        createdAt: '2026-11-17 13:27:14'
+      },
+      {
+        id: 'notif-3',
+        title: 'Weekend Flash Sale!',
+        message: 'Get 25% off on fresh produce across all local stores this Saturday.',
+        type: 'promotion',
+        status: 'sent',
+        createdAt: '2026-11-14 09:00:00'
+      }
+    ]
+  },
+  {
+    id: '902',
+    name: 'Sarah Jenkins',
+    email: 'sarah.j@outlook.com',
+    mobile: '9876543210',
+    country: 'United States',
+    countryCode: '1',
+    avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80',
+    status: 'active',
+    emailVerified: true,
+    mobileVerified: true,
+    kycVerified: true,
+    registrationDate: '12 Nov 2026',
+    referralCode: 'REF-SARAH99',
+    walletBalance: 240.50,
+    loyaltyPoints: 340,
+    totalOrders: 15,
+    totalSpent: 9820.00,
+    addresses: [
+      {
+        id: 'addr-3',
+        type: 'home',
+        name: 'Sarah Jenkins',
+        mobile: '9876543210',
+        addressLine1: '742 Evergreen Terrace',
+        addressLine2: 'Apt 4B',
+        landmark: 'Next to Spring Park',
+        city: 'Springfield',
+        state: 'Oregon',
+        postalCode: '97477',
+        latitude: 44.0462,
+        longitude: -123.0220,
+        isDefault: true,
+      }
+    ],
+    orders: [
+      {
+        id: 'ord-11180',
+        orderNumber: '4839',
+        status: 'delivered',
+        paymentStatus: 'paid',
+        paymentMethod: 'stripe',
+        total: 1850.00,
+        createdAt: '2026-11-15 17:10:00',
+        storeName: "Organic Harvest Market",
+        itemsCount: 5,
+      }
+    ],
+    walletTransactions: [
+      {
+        id: 'tx-1910',
+        amount: 240.50,
+        type: 'deposit',
+        paymentMethod: 'stripe',
+        status: 'completed',
+        description: 'Auto-refill via card',
+        reference: 'STRIPE_ch_99a',
+        createdAt: '2026-11-15 17:05:00'
+      }
+    ],
+    loyaltyTransactions: [
+      {
+        id: 'lp-402',
+        points: 150,
+        type: 'credit',
+        status: 'active',
+        expiryDays: 180,
+        description: 'Tier Gold quarterly reward',
+        createdAt: '2026-11-15 17:15:00'
+      }
+    ],
+    notifications: []
+  },
+  {
+    id: '903',
+    name: 'Amit Patel',
+    email: 'amit.patel@techcorp.in',
+    mobile: '9820198201',
+    country: 'India',
+    countryCode: '91',
+    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80',
+    status: 'active',
+    emailVerified: true,
+    mobileVerified: true,
+    kycVerified: false,
+    registrationDate: '05 Nov 2026',
+    referralCode: 'REF-AMITP01',
+    walletBalance: 0.00,
+    loyaltyPoints: 45,
+    totalOrders: 3,
+    totalSpent: 1100.00,
+    addresses: [],
+    orders: [],
+    walletTransactions: [],
+    loyaltyTransactions: [],
+    notifications: []
+  },
+  {
+    id: '904',
+    name: 'Elena Rostova',
+    email: 'elena.rostova@gmail.com',
+    mobile: '9811223344',
+    country: 'United Kingdom',
+    countryCode: '44',
+    avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80',
+    status: 'blocked',
+    emailVerified: true,
+    mobileVerified: false,
+    kycVerified: false,
+    registrationDate: '28 Oct 2026',
+    referralCode: 'REF-ELENA77',
+    walletBalance: 0.00,
+    loyaltyPoints: 0,
+    totalOrders: 1,
+    totalSpent: 450.00,
+    addresses: [],
+    orders: [],
+    walletTransactions: [],
+    loyaltyTransactions: [],
+    notifications: []
+  }
+];
