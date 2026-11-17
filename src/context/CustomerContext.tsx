@@ -92,6 +92,7 @@ export const CustomerProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     type: 'credit' | 'debit',
     note: string
   ): Promise<ApiResponse<Customer>> => {
+    
     const res = await customerService.adjustLoyalty(customerId, { points, type, note });
     if (res.success && res.data) {
       setCustomers(prev => prev.map(c => (c.id === customerId ? res.data! : c)));
