@@ -13,10 +13,10 @@ dist-ssr
 .next
 out
 *.local
-# .env files (uncomment to hide private keys)
-# .env
-!.env
-!.env.example
+
+# .env files
+.env
+.env*.local
 
 # Editor directories and files
 .vscode/*
@@ -28,3 +28,6 @@ out
 *.njsproj
 *.sln
 *.sw?
+
+.next_old*
+.git_corrupt*

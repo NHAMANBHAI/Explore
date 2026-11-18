@@ -18,7 +18,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col transition-colors">
+    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 flex flex-col transition-colors">
       {/* Sidebar (Desktop permanent, Mobile offcanvas) */}
       <Sidebar
         currentRoute={currentRoute}
@@ -40,8 +40,8 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
         </main>
 
         {/* Global Footer */}
-        <footer className="border-t border-slate-200 dark:border-slate-800 py-4 px-6 text-center text-xs text-slate-400 bg-white/50 dark:bg-slate-900/50">
-          <p>© 2026 HyperLocal Multivendor Delivery & E-Commerce Platform. All rights reserved.</p>
+        <footer className="border-t border-zinc-200/80 dark:border-zinc-800/80 py-4 px-6 text-center text-xs text-zinc-400 bg-white/50 dark:bg-zinc-900/50">
+          <p>© 2026 Explore Hyperlocal Multi-Business Commerce OS. All rights reserved.</p>
         </footer>
       </div>
 

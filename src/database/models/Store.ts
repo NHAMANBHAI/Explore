@@ -11,6 +11,14 @@ export interface StoreAttributes {
   email: string;
   phone: string;
   businessType: string;
+  businessCategory?: 'RETAIL' | 'CLINIC' | 'SALON' | 'AUTO_SERVICE' | 'PET_CARE' | 'FITNESS' | 'GENERAL_SERVICE';
+  enableAppointments?: boolean;
+  slotDurationMinutes?: number;
+  autoWhatsAppReminders?: boolean;
+  autoFollowUps?: boolean;
+  autoEODReport?: boolean;
+  providerLabel?: string;
+  serviceLabel?: string;
   gstin?: string;
   panNumber?: string;
   fssaiNumber?: string;
@@ -43,6 +51,14 @@ export class Store extends Model<StoreAttributes> implements StoreAttributes {
   public email!: string;
   public phone!: string;
   public businessType!: string;
+  public businessCategory!: 'RETAIL' | 'CLINIC' | 'SALON' | 'AUTO_SERVICE' | 'PET_CARE' | 'FITNESS' | 'GENERAL_SERVICE';
+  public enableAppointments!: boolean;
+  public slotDurationMinutes!: number;
+  public autoWhatsAppReminders!: boolean;
+  public autoFollowUps!: boolean;
+  public autoEODReport!: boolean;
+  public providerLabel!: string;
+  public serviceLabel!: string;
   public gstin?: string;
   public panNumber?: string;
   public fssaiNumber?: string;
@@ -104,6 +120,38 @@ Store.init(
     businessType: {
       type: DataTypes.STRING(50),
       defaultValue: 'RETAIL',
+    },
+    businessCategory: {
+      type: DataTypes.STRING(50),
+      defaultValue: 'RETAIL',
+    },
+    enableAppointments: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
+    slotDurationMinutes: {
+      type: DataTypes.INTEGER,
+      defaultValue: 30,
+    },
+    autoWhatsAppReminders: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
+    autoFollowUps: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
+    autoEODReport: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
+    providerLabel: {
+      type: DataTypes.STRING(50),
+      defaultValue: 'Specialist',
+    },
+    serviceLabel: {
+      type: DataTypes.STRING(50),
+      defaultValue: 'Service / Consultation',
     },
     gstin: {
       type: DataTypes.STRING(30),

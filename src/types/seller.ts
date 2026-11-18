@@ -17,6 +17,16 @@ export interface Store {
   walletBalance: number;
   categories: string[];
   createdAt: string;
+
+  // Multi-Business Feature Access & Automation Toggles
+  businessCategory?: 'RETAIL' | 'CLINIC' | 'SALON' | 'AUTO_SERVICE' | 'PET_CARE' | 'FITNESS' | 'GENERAL_SERVICE';
+  enableAppointments?: boolean;
+  slotDurationMinutes?: number;
+  autoWhatsAppReminders?: boolean;
+  autoFollowUps?: boolean;
+  autoEODReport?: boolean;
+  providerLabel?: string;
+  serviceLabel?: string;
 }
 
 export interface SellerWithdrawal {

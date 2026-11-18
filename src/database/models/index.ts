@@ -13,6 +13,7 @@ import { OrderItem } from './OrderItem';
 import { DeliveryZone } from './DeliveryZone';
 import { DeliveryRider } from './DeliveryRider';
 import { SystemSetting } from './SystemSetting';
+import { UniversalBooking } from './UniversalBooking';
 
 // ---------------------------------------------------------------------
 // Define Sequelize Model Associations
@@ -74,6 +75,14 @@ OrderItem.belongsTo(Order, { foreignKey: 'orderId', as: 'order' });
 Product.hasMany(OrderItem, { foreignKey: 'productId', as: 'orderItems' });
 OrderItem.belongsTo(Product, { foreignKey: 'productId', as: 'product' });
 
+// Store <-> UniversalBooking (1:N)
+Store.hasMany(UniversalBooking, { foreignKey: 'storeId', as: 'bookings', onDelete: 'CASCADE' });
+UniversalBooking.belongsTo(Store, { foreignKey: 'storeId', as: 'store' });
+
+// Customer <-> UniversalBooking (1:N optional)
+Customer.hasMany(UniversalBooking, { foreignKey: 'customerId', as: 'bookings' });
+UniversalBooking.belongsTo(Customer, { foreignKey: 'customerId', as: 'customer' });
+
 // ---------------------------------------------------------------------
 // Exports
 // ---------------------------------------------------------------------
@@ -93,6 +102,7 @@ export {
   DeliveryZone,
   DeliveryRider,
   SystemSetting,
+  UniversalBooking,
 };
 
 export async function initDatabase(alter = false) {

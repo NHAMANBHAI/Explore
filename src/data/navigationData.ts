@@ -19,6 +19,25 @@ export const navigationMenuData: NavGroup[] = [
     ]
   },
   {
+    groupTitle: 'Multi-Business Appointments & Recalls',
+    items: [
+      {
+        id: 'bookings',
+        title: 'Appointments & Slots',
+        icon: 'CalendarCheck2',
+        badge: 'Universal',
+        badgeVariant: 'success',
+        route: 'bookings',
+        children: [
+          { id: 'bookings_calendar', title: 'Live Slot Roster', route: 'bookings' },
+          { id: 'bookings_followups', title: 'Follow-Up Recalls (7/15/30d)', route: 'bookings' },
+          { id: 'bookings_eod', title: '21:00 EOD Reports', route: 'bookings' },
+          { id: 'bookings_reminders', title: '18:00 WhatsApp Reminders', route: 'bookings' },
+        ]
+      }
+    ]
+  },
+  {
     groupTitle: 'Order Fulfillment & Logistics',
     items: [
       {
@@ -80,24 +99,23 @@ export const navigationMenuData: NavGroup[] = [
         badgeVariant: 'primary',
         route: 'customers',
         children: [
-          { id: 'customer_list', title: 'Customers Directory', route: 'customers' },
-          { id: 'wallet_transactions', title: 'Wallet Transactions', route: 'customers' },
-          { id: 'wallet_deposits', title: 'Pending Deposits', route: 'customers' },
-          { id: 'referrals', title: 'Refer & Earn', route: 'customers' },
+          { id: 'customers_list', title: 'All Customers', route: 'customers' },
+          { id: 'wallets', title: 'Wallet Balances', route: 'customers' },
+          { id: 'loyalty', title: 'Loyalty Reward Points', route: 'customers' },
         ]
       },
       {
-        id: 'support',
-        title: 'Customer Support Inbox',
+        id: 'chat',
+        title: 'Live Chat & Support',
         icon: 'MessageSquare',
-        badge: '3 Open',
-        badgeVariant: 'danger',
-        route: 'support',
+        badge: 'Live Socket',
+        badgeVariant: 'success',
+        route: 'chat',
       }
     ]
   },
   {
-    groupTitle: 'Merchant & Store Management',
+    groupTitle: 'Merchants, Stores & Finance',
     items: [
       {
         id: 'sellers',
@@ -105,46 +123,42 @@ export const navigationMenuData: NavGroup[] = [
         icon: 'Store',
         route: 'sellers',
         children: [
-          { id: 'seller_directory', title: 'Sellers Roster', route: 'sellers' },
-          { id: 'store_directory', title: 'Physical Stores', route: 'sellers' },
-          { id: 'store_reviews', title: 'Store Reviews', route: 'sellers' },
-          { id: 'commissions', title: 'Settlement Overview', route: 'sellers' },
-          { id: 'seller_withdrawals', title: 'Seller Withdrawals', route: 'sellers' },
+          { id: 'sellers_list', title: 'Merchant Directory', route: 'sellers' },
+          { id: 'seller_requests', title: 'Onboarding Applications', route: 'sellers' },
+          { id: 'seller_settlements', title: 'Settlement Ledger', route: 'sellers' },
         ]
       },
       {
-        id: 'subscription_plans',
-        title: 'Vendor Subscriptions',
+        id: 'payment_requests',
+        title: 'Payout Requests',
         icon: 'CreditCard',
-        route: 'subscriptions',
+        route: 'payment_requests',
       }
     ]
   },
   {
-    groupTitle: 'Catalog & Merchandising',
+    groupTitle: 'Catalog & Inventory Control',
     items: [
       {
         id: 'products',
-        title: 'Products Catalog',
+        title: 'Product Catalog',
         icon: 'Package',
         route: 'products',
         children: [
-          { id: 'all_products', title: 'All Products', route: 'products' },
-          { id: 'pending_products', title: 'Pending Approval', route: 'products' },
-          { id: 'bulk_upload', title: 'Bulk CSV Upload', route: 'products' },
-          { id: 'badges', title: 'Badges & Ribbons', route: 'products' },
-          { id: 'attributes', title: 'Attributes & Variants', route: 'products' },
+          { id: 'all_products', title: 'Products List', route: 'products' },
+          { id: 'bulk_upload', title: 'Bulk CSV / Excel Import', route: 'products' },
+          { id: 'inventory_alerts', title: 'Low Stock Alerts', route: 'products' },
         ]
       },
       {
         id: 'categories',
-        title: 'Categories & Brands',
+        title: 'Category Hierarchy',
         icon: 'FolderTree',
         route: 'categories',
       },
       {
         id: 'watch_and_buy',
-        title: 'Watch & Buy (Reels)',
+        title: 'Video Commerce',
         icon: 'Video',
         badge: 'New',
         badgeVariant: 'success',

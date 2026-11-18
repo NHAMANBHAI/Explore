@@ -11,6 +11,7 @@
     "db:sync": "node scripts/sync-db.mjs"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.10.0",
     "@tailwindcss/vite": "^4.3.5",
     "clsx": "^2.1.1",
     "firebase": "^13.4.0",
@@ -19,8 +20,11 @@
     "next": "^16.4.6",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "react-error-boundary": "^5.0.0",
+    "react-hook-form": "^7.54.2",
     "sequelize": "^6.37.8",
-    "tailwindcss": "^4.3.5"
+    "tailwindcss": "^4.3.5",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.5",
