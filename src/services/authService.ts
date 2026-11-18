@@ -16,6 +16,7 @@ class AuthService {
    * Retrieve saved session from localStorage
    */
   public getStoredUser(): AdminUser | null {
+    if (typeof window === 'undefined') return null;
     try {
       const data = localStorage.getItem(STORAGE_KEY);
       if (!data) return null;
@@ -29,14 +30,18 @@ class AuthService {
    * Save session to localStorage
    */
   public saveSession(user: AdminUser): void {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+    }
   }
 
   /**
    * Clear session
    */
   public clearSession(): void {
-    localStorage.removeItem(STORAGE_KEY);
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem(STORAGE_KEY);
+    }
   }
 
   /**
